@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29910:TargetPlatformVersion=10.0.19041.0:
 Debug|Win32|D:\Projects\C++_VS\Lab5_OP\Lab5OP\|
+=======
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29910:TargetPlatformVersion=10.0.18362.0:
+Debug|Win32|D:\Users\Bogdan\Desktop\Lab5\|
+>>>>>>> a74873fab79ccd597bce787cfe631d2ada099c3d

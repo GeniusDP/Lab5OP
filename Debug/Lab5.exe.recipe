@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>D:\Projects\C++_VS\Lab5_OP\Lab5OP\Debug\Lab5.exe</FullPath>
+=======
+      <FullPath>D:\Users\Bogdan\Desktop\Lab5\Debug\Lab5.exe</FullPath>
+>>>>>>> a74873fab79ccd597bce787cfe631d2ada099c3d
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

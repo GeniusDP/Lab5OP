@@ -1,32 +1,47 @@
 ﻿#include <iostream>
+#include <string>
+#include "PointOnMap.h"
+#include "Reader.h"
 #include <vector>
-#include <stack>
 #include "RTree.h"
+#include "Rectangle.h"
+#include "RTree.h"
+#include <cmath>
+
+using namespace std;
+
 
 using namespace std;
 
 int main()
 {
-    RTree tree(0, 0, 15, 15);
-    int N;
-    cin >> N; 
-    for (int i = 0; i < N; i++) {
-        double x, y;
-        cin >> x >> y;
-        tree.addPoint(tree.getRoot(), { x, y });
+    PointOnMap center;
+    double radius;
+    vector<PointOnMap> items;
+    Reader reader("data1.csv");
+    reader.readFromFile(items);
+    double result = -1e9;
+    /*for (auto i : items) {
+        result = max(result, max(i.x, i.y));
     }
-    int m;
-    cin >> m;
-    for (int i = 0; i < m; i++) {
-        double x1, y1;
-        cin >> x1 >> y1;
-        tree.removePoint(tree.getRoot(), { x1, y1 });
-        vector< Point > result;
-        tree.findPointsInCircle(tree.getRoot(), { 5, 5 }, 5, result);
-        cout << "Size: " << result.size() << endl;
-        for (int i = 0; i < result.size(); i++)
-            cout << result[i].x << " " << result[i].y << endl;
-        
+    cout << result;*/
+
+    cout << "Input centerLat, centerLong and radius: ";
+    cin >> center.Lat >> center.Long >> radius;
+    cout << radius << endl;
+    center.converse();
+    cout << center.x << " " << center.y << "\n";
+    cout << "************************\n";
+    RTree tree(0., 0., 7000., 7000.);
+    for (auto i : items) {
+        tree.addPoint(tree.getRoot(), i);
+        cout << i.x << " " << i.y << "\n";
+    }
+    cout << "************************\n";
+    vector<PointOnMap> res;
+    tree.findPointsInRect(tree.getRoot(), { {0, 0}, {7000, 7000} }, res);
+    for (auto r : res) {
+        cout << r;
     }
     return 0;
 }

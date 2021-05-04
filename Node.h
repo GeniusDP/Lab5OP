@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node {
     Rectangle rect;
-    Point point;
+    PointOnMap point;
     vector< Node* > children;
     Node() {
         rect.leftDown = { 0, 0 };

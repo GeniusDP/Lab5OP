@@ -32,7 +32,7 @@ public:
         root = new Node();
         root->rect.leftDown = { x1, y1 };
         root->rect.rightUp = { x2, y2 };
-        height = 3;
+        height = 8;//hight of the tree
         buildTree(root);
     }
     Node* getRoot() {
@@ -48,7 +48,7 @@ public:
                 buildTree(node->children[i], h + 1);
         }
     }
-    void addPoint(Node* node, Point point, int h = 1) {
+    void addPoint(Node* node, PointOnMap point, int h = 1) {
         if (!intersectPointRectangle(point, node->rect))
             return;
         if (h == height) {
@@ -61,7 +61,7 @@ public:
                 addPoint(node->children[i], point, h + 1);
         }
     }
-    void removePoint(Node* node, Point point) {
+    void removePoint(Node* node, PointOnMap point) {
         if (!intersectPointRectangle(point, node->rect))
             return;
         bool finded = false;
@@ -78,7 +78,7 @@ public:
                 removePoint(node->children[i], point);
         }
     }
-    void findPointsInRect(Node* node, Rectangle rect, vector< Point >& result) {
+    void findPointsInRect(Node* node, Rectangle rect, vector< PointOnMap >& result) {
         if (node->children.size() > 0) {
             if (intersectRectangles(node->rect, rect)) {
                 for (int i = 0; i < node->children.size(); i++) {
@@ -93,7 +93,7 @@ public:
                 }
             }
     }
-    void findPointsInCircle(Node* node, Point center, double R, vector< Point >& result) {
+    void findPointsInCircle(Node* node, PointOnMap center, double R, vector< PointOnMap >& result) {
         if (node->children.size() > 0) {
             if (intersectCircleRectangle(center, R, node->rect)) {
                 for (int i = 0; i < node->children.size(); i++) {
