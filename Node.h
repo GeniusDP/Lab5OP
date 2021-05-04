@@ -5,7 +5,7 @@
 using namespace std;
 
 struct Node {
-    Rectangle rect;
+    Rectengle rect;
     PointOnMap point;
     vector< Node* > children;
     Node() {

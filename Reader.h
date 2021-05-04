@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include "PointOnMap.h"
 #include <fstream>
 #include <iostream>
@@ -35,7 +34,6 @@ public:
 	void readFromFile(vector<PointOnMap>& a) {
 		ifstream in(fileName);
 		ios_base::sync_with_stdio(false);
-		cin.tie(0);
 		string line;
 		while (getline(in, line)) {
 			a.push_back(split(line));
