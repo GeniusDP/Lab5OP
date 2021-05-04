@@ -32,7 +32,6 @@ public:
 		fileName = name;
 	}
 	void readFromFile(vector<PointOnMap>& a) {
-		setlocale(LC_ALL, "rus");
 		ifstream in(fileName);
 		ios_base::sync_with_stdio(false);
 		string line;
