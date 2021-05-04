@@ -13,8 +13,9 @@ int main()
     vector<PointOnMap> items;
     Reader reader("data.csv");
     reader.readFromFile(items);
-        cin >> center.Lat >> center.Long >> squareLen;
-        center.converse();
     
+    cout << "Input centerLat, centerLong and squareLen: ";
+    cin >> center.Lat >> center.Long >> squareLen;
+    center.converse();
     return 0;
 }
