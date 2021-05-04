@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 struct PointOnMap {
-    double Lat, Long;
     double x, y;
+    double Lat, Long;
     std::string type;
     std::string subType;
     std::string name;

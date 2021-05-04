@@ -1,4 +1,7 @@
-/Lab5.sln
-/Lab5.vcxproj
-/Lab5.vcxproj.filters
-/Lab5.vcxproj.user
+Debug
+.vs
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.csv
