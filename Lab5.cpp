@@ -1,24 +1,20 @@
 ﻿#include <iostream>
 #include <string>
+#include "PointOnMap.h"
+#include "Reader.h"
+#include <vector>
 
 using namespace std;
 
-struct PointOnMap{
-    double Lat, Long;
-    double x, y;
-    string type;
-    string subType;
-    string name;
-    string adress;
-    void converse() {
-        x = 1;//formulas
-        y = 1;
-    }
-};
-
-
 int main()
 {
-
+    PointOnMap center;
+    double squareLen;
+    vector<PointOnMap> items;
+    Reader reader("data.csv");
+    reader.readFromFile(items);
+        cin >> center.Lat >> center.Long >> squareLen;
+        center.converse();
+    
     return 0;
 }
