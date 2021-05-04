@@ -78,11 +78,11 @@ public:
                 removePoint(node->children[i], point);
         }
     }
-    void findPointsInRect(Node* node, Rectangle rect, vector< Point >& result, int h = 1) {
+    void findPointsInRect(Node* node, Rectangle rect, vector< Point >& result) {
         if (node->children.size() > 0) {
             if (intersectRectangles(node->rect, rect)) {
                 for (int i = 0; i < node->children.size(); i++) {
-                    findPointsInRect(node->children[i], rect, result, h + 1);
+                    findPointsInRect(node->children[i], rect, result);
                 }
             }
         }
@@ -93,6 +93,22 @@ public:
                 }
             }
     }
+    void findPointsInCircle(Node* node, Point center, double R, vector< Point >& result) {
+        if (node->children.size() > 0) {
+            if (intersectCircleRectangle(center, R, node->rect)) {
+                for (int i = 0; i < node->children.size(); i++) {
+                    findPointsInCircle(node->children[i], center, R, result);
+                }
+            }
+        }
+        else
+            if (node->point.x != -1e9 && node->point.y != -1e9) {
+                if (intersectCirclePoint(center, R, node->point)) {
+                    result.push_back(node->point);
+                }
+            }
+    }
+
     /* ~RTree() {
          stack< Node* > _stack;
          _stack.push(root);
