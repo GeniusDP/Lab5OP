@@ -1,5 +1,0 @@
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\Debug\Lab5.exe
-<<<<<<< HEAD
-=======
-D:\Users\Bogdan\Desktop\Lab5\Debug\Lab5.exe
->>>>>>> a74873fab79ccd597bce787cfe631d2ada099c3d
