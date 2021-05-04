@@ -10,9 +10,6 @@
 
 using namespace std;
 
-
-using namespace std;
-
 int main()
 {
     PointOnMap center;
@@ -39,9 +36,9 @@ int main()
     }
     cout << "************************\n";
     vector<PointOnMap> res;
-    tree.findPointsInRect(tree.getRoot(), { {0, 0}, {7000, 7000} }, res);
+    tree.findPointsInCircle(tree.getRoot(), center, radius , res);
     for (auto r : res) {
-        cout << r;
+        cout << r << endl;
     }
     return 0;
 }
