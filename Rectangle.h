@@ -1,14 +1,15 @@
 #pragma once
 #include <cmath>
 #include "PointOnMap.h"
+
 using namespace std;
 
 
-struct Rectangle {
+struct Rectengle {
     PointOnMap leftDown, rightUp;
 };
 
-bool intersectPointRectangle(PointOnMap point, Rectangle rect) {
+bool intersectPointRectangle(PointOnMap point, Rectengle rect) {
     double x1 = rect.leftDown.x, y1 = rect.leftDown.y,
         x2 = rect.rightUp.x, y2 = rect.rightUp.y;
     if (point.x < x1 || point.x > x2 || point.y < y1 || point.y > y2)
@@ -16,14 +17,14 @@ bool intersectPointRectangle(PointOnMap point, Rectangle rect) {
     return true;
 }
 
-bool intersectRectangles(Rectangle rect1, Rectangle rect2) {
+bool intersectRectangles(Rectengle rect1, Rectengle rect2){
     if ((rect1.leftDown.x <= rect2.rightUp.x || rect1.rightUp.x >= rect2.leftDown.x) &&
         (rect1.leftDown.y <= rect2.rightUp.y || rect1.rightUp.y >= rect2.leftDown.y))
         return true;
     return false;
 }
 
-bool intersectCircleRectangle(PointOnMap point, double R, Rectangle rect)
+bool intersectCircleRectangle(PointOnMap point, double R, Rectengle rect)
 {
     double centerX = (rect.leftDown.x + rect.rightUp.x) / 2,
         centerY = (rect.leftDown.y + rect.rightUp.y) / 2,

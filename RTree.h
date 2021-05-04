@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Node.h"
+#include "Rectangle.h"
 
 using namespace std;
 
@@ -9,7 +10,7 @@ class RTree {
     int height;
 
 private:
-    vector< Node* > divideNodeByFourParts(Rectangle rect) {
+    vector< Node* > divideNodeByFourParts ( Rectengle rect) {
         Node* leftUp = new Node(), * rightUp = new Node(), * leftBottom = new Node(), * rightBottom = new Node;
         double x1 = rect.leftDown.x, y1 = rect.leftDown.y,
             x2 = rect.rightUp.x, y2 = rect.rightUp.y;
@@ -78,7 +79,7 @@ public:
                 removePoint(node->children[i], point);
         }
     }
-    void findPointsInRect(Node* node, Rectangle rect, string type, string subtype, vector< PointOnMap >& result) {
+    void findPointsInRect(Node* node, Rectengle rect, string type, string subtype, vector< PointOnMap >& result) {
         if (node->children.size() > 0) {
             if (intersectRectangles(node->rect, rect)) {
                 for (int i = 0; i < node->children.size(); i++) {
