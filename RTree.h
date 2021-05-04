@@ -51,7 +51,7 @@ public:
     void addPoint(Node* node, PointOnMap point, int h = 1) {
         if (!intersectPointRectangle(point, node->rect))
             return;
-        if (h == height) {
+        if (h == height + 1) {
             Node* newNode = new Node();
             newNode->point = point;
             node->children.push_back(newNode);
@@ -71,6 +71,7 @@ public:
                     delete node->children[i];
                     node->children.erase(node->children.begin() + i);
                     finded = true;
+                    i--;
                 }
             }
         if (!finded) {

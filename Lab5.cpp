@@ -41,6 +41,7 @@ int main()
     cout << "Number of results found: " << res.size() << endl;
     for (auto r : res) {
         cout << r << endl;
+        tree.removePoint(tree.getRoot(), r);
     }
     return 0;
 }
