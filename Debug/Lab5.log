@@ -1,0 +1,9 @@
+﻿  Lab5.cpp
+D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(78,27): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(82,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(95,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(103,28): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(112,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(119,35): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(164,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Lab5.vcxproj -> D:\Projects\C++_VS\Lab5_OP\Lab5OP\Debug\Lab5.exe
