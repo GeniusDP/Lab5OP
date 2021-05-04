@@ -96,7 +96,38 @@ public:
                 addPoint(node->children[i], point, h + 1);
         }
     }
-
+    void removePoint(Node* node, Point point) {
+        if (!intersectPointRectangle(point, node->rect))
+            return;
+        bool finded = false;
+        for (int i = 0 ; i < node->children.size(); i++)
+            if (node->children[i]->point.x != -1e9) {
+                if (node->children[i]->point.x == point.x && node->children[i]->point.y == point.y) {
+                    delete node->children[i];
+                    node->children.erase(node->children.begin() + i);
+                    finded = true;
+                }
+            }
+        if (!finded) {
+            for (int i = 0; i < node->children.size(); i++)
+                removePoint(node->children[i], point);
+        }
+    }
+    void findPointsInRect(Node* node, Rectangle rect, vector< Point >& result, int h = 1) {
+        if (node->children.size() > 0) {
+            if (intersectRectangles(node->rect, rect)) {
+                for (int i = 0; i < node->children.size(); i++) {
+                    findPointsInRect(node->children[i], rect, result, h + 1);
+                }
+            }
+        }
+        else 
+        if (node->point.x != -1e9 && node->point.y != -1e9){
+            if (intersectPointRectangle(node->point, rect)){
+                result.push_back(node->point);
+            }
+        }
+    }
    /* ~RTree() {
         stack< Node* > _stack;
         _stack.push(root);
