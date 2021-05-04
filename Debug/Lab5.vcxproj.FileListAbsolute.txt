@@ -1,1 +1,2 @@
 D:\Projects\C++_VS\Lab5_OP\Lab5OP\Debug\Lab5.exe
+D:\Users\Bogdan\Desktop\Lab5\Debug\Lab5.exe

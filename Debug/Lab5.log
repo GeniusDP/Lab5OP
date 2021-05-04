@@ -1,10 +1,12 @@
 ﻿  Lab5.cpp
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\RTree.h(43,27): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\RTree.h(47,31): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\RTree.h(60,31): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\RTree.h(68,27): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\RTree.h(77,31): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\RTree.h(84,35): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\RTree.h(99,35): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\C++_VS\Lab5_OP\Lab5OP\Lab5.cpp(27,27): warning C4018: <: несоответствие типов со знаком и без знака
-  Lab5.vcxproj -> D:\Projects\C++_VS\Lab5_OP\Lab5OP\Debug\Lab5.exe
+D:\Users\Bogdan\Desktop\Lab5\Reader.h(13,14): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\RTree.h(43,27): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\RTree.h(47,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\RTree.h(60,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\RTree.h(68,27): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\RTree.h(77,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\RTree.h(84,35): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\RTree.h(99,35): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Users\Bogdan\Desktop\Lab5\Lab5.cpp(18,12): warning C4101: squareLen: неиспользованная локальная переменная
+  LINK : не найден или не выполнена сборка D:\Users\Bogdan\Desktop\Lab5\Debug\Lab5.exe при последней инкрементной компоновке; выполняется полная компоновка
+  Lab5.vcxproj -> D:\Users\Bogdan\Desktop\Lab5\Debug\Lab5.exe
