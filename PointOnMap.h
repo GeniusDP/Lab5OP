@@ -9,7 +9,8 @@ struct PointOnMap {
     std::string name;
     std::string adress;
     void converse() {
-        x = 1;//formulas
-        y = 1;
+        //converting into xOy coordinates
+        x = 6371 * cos(Lat * 3.14159 / 180) * (Long * 3.14159 / 180);
+        y = (Lat * 3.14159 / 180) * 6371;
     }
 };
