@@ -54,7 +54,6 @@ public:
         if (h == height) {
             Node* newNode = new Node();
             newNode->point = point;
-            cout << node->rect.leftDown.x << " " << node->rect.rightUp.x << endl;
             node->children.push_back(newNode);
         }
         else {
@@ -79,32 +78,32 @@ public:
                 removePoint(node->children[i], point);
         }
     }
-    void findPointsInRect(Node* node, Rectangle rect, vector< PointOnMap >& result) {
+    void findPointsInRect(Node* node, Rectangle rect, string type, string subtype, vector< PointOnMap >& result) {
         if (node->children.size() > 0) {
             if (intersectRectangles(node->rect, rect)) {
                 for (int i = 0; i < node->children.size(); i++) {
-                    findPointsInRect(node->children[i], rect, result);
+                    findPointsInRect(node->children[i], rect, type, subtype, result);
                 }
             }
         }
         else
             if (node->point.x != -1e9 && node->point.y != -1e9) {
-                if (intersectPointRectangle(node->point, rect)) {
+                if (intersectPointRectangle(node->point, rect) && node->point.type == type && node->point.subType == subtype) {
                     result.push_back(node->point);
                 }
             }
     }
-    void findPointsInCircle(Node* node, PointOnMap center, double R, vector< PointOnMap >& result) {
+    void findPointsInCircle(Node* node, PointOnMap center, double R, string type, string subtype, vector< PointOnMap >& result) {
         if (node->children.size() > 0) {
             if (intersectCircleRectangle(center, R, node->rect)) {
                 for (int i = 0; i < node->children.size(); i++) {
-                    findPointsInCircle(node->children[i], center, R, result);
+                    findPointsInCircle(node->children[i], center, R, type, subtype, result);
                 }
             }
         }
         else
             if (node->point.x != -1e9 && node->point.y != -1e9) {
-                if (intersectCirclePoint(center, R, node->point)) {
+                if (intersectCirclePoint(center, R, node->point) && node->point.type == type && node->point.subType == subtype) {
                     result.push_back(node->point);
                 }
             }
