@@ -33,7 +33,7 @@ public:
         root = new Node();
         root->rect.leftDown = { x1, y1 };
         root->rect.rightUp = { x2, y2 };
-        height = 4;//hight of the tree
+        height = 3;//hight of the tree
         buildTree(root);
     }
     Node* getRoot() {
