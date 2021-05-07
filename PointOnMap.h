@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <iomanip>
 using namespace std;
 struct PointOnMap {
     double x, y;
@@ -11,11 +12,11 @@ struct PointOnMap {
     std::string address;
     void converse() {
         //converting into xOy coordinates
-        x = 6371 * cos(Lat * 3.14159 / 180) * (Long * 3.14159 / 180);
-        y = (Lat * 3.14159 / 180) * 6371;
+        x = 6371 * cos(Lat * 3.14159 / 180.) * (Long * 3.14159 / 180.);
+        y = (Lat * 3.14159 / 180.) * 6371;
     }
     friend ostream& operator<<(ostream& out, PointOnMap x){
-        out << x.Lat << ";" << x.Long << ";" << x.type << ";" << x.subType << ";" << x.name << ";" << x.address << ";";
+        out << fixed << setprecision(5) << x.Lat << ";" << setprecision(5) << x.Long << ";" << x.type << ";" << x.subType << ";" << x.name << ";" << x.address << ";";
         return out;
     }
 };
