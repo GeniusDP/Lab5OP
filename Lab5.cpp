@@ -8,8 +8,15 @@
 #include "RTree.h"
 #include <cmath>
 #include <windows.h>
+#include <cmath>
 
 using namespace std;
+
+
+double dist(PointOnMap A, PointOnMap B) {
+    return sqrt( pow(A.x - B.x, 2) + pow(A.y - B.y, 2) );
+}
+
 
 int main(int argc, char** argv){
     SetConsoleOutputCP(65001);
@@ -31,18 +38,38 @@ int main(int argc, char** argv){
 
     cout << "Making a tree...";
     RTree tree(0., 0., 7000., 7000.);
+    system("cls");
+    cout << "Adding points...";
     for (auto i : items) {
         tree.addPoint(tree.getRoot(), i);
     }
     system("cls");
 
+
+    double currRadius = 1.;
     vector<PointOnMap> res;
-    tree.findPointsInCircle(tree.getRoot(), center, radius, type, subtype, res);
-    //tree.findPointsInRect(tree.getRoot(), { { 0, 0 }, { 7000, 7000 } }, type, subtype, res);
-    
-    cout << "Number of results found: " << res.size() << endl;
+    while ( currRadius <= (1<<13) ) {
+        tree.findPointsInCircle(tree.getRoot(), center, currRadius, type, subtype, res);
+        if (res.size() > 0)break;
+        currRadius *= 2;
+    }
+    double minDist = 1e9;
+    int pos = -1;
+    for (int i = 0; i < res.size(); i++) {
+        if ( dist(center, res[i]) < minDist) {
+            minDist = dist(center, res[i]);
+            pos = i;
+        }
+    }
+    if (pos != -1) {
+        cout << res[pos] << endl;
+    }
+    else {
+        cout << "Not found!\n";
+    }
+    /*cout << "Number of results found: " << res.size() << endl;
     for (auto r : res) {
         cout << r << endl;
-    }
+    }*/
     return 0;
 }
